@@ -1,0 +1,159 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{ exercise.name }}{% endblock title %}
+
+{% load static %}
+{% block extrastyles %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/exercises.css' %}">
+</link>
+<link rel="stylesheet" type="text/css" href="{% static 'styles/learning_index.css' %}">
+</link>
+<link rel="stylesheet" type="text/css" href="{% static 'styles/code.css' %}">
+</link>
+<link rel="stylesheet" type="text/css" href="{% static 'styles/exercises_base.css' %}">
+</link>
+<link rel="stylesheet" type="text/css" href="{% static 'styles/question.css' %}">
+<script src="https://kit.fontawesome.com/d9e5eb893f.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'scripts/question.js' %}" defer></script>
+<!--<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>-->
+{% endblock extrastyles %}
+
+{% block content %}
+<form method="post" action="" class="teacher">
+    {% csrf_token %}
+    <div class="learning">
+        <div class="left-learning">
+            <section class="explanation">
+                <h1 class="title">{{ exercise.name }}</h1>
+                <p class="description">{{ description|safe }}</p>
+            </section>
+            <section class="step_graph_ex">
+                <div class="titles_container">
+                    <h2>Entradas</h2>
+                    <h2 class="exits">Salidas</h2>
+                </div>
+                <hr class="step_separator">
+
+                <section class="recursive-steps exercise-steps">
+                    <div class="block block-input">
+                        <div class="info_container">
+                            <div class="info">
+                                {% for field in form %}
+                                <div class="field">
+                                    {{ field.label_tag }}{{ field }}
+                                    <span class="question_container" data-question><i class="question fa-solid fa-question" data-question-button></i><span class="question_help">Este campo será necesario rellenarlo cuando se indique en el ejercicio del recuadro de la derecha en el momento que indique el buho.</span></span>
+                                </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <h2>Entrada</h2>
+                    </div>
+
+                    <div class="arrow arrow-result">
+                        <img src="{% static 'images/blue-pointer.png' %}" alt="Flecha negra apuntando hacia la derecha"
+                            class="arrow-image black_arrow">
+                    </div>
+
+                    <div class="arrow arrow-decomposition">
+                        <p class="step step-decomposition">Descomposición</p>
+                        <img src="{% static 'images/green-pointer.png' %}" alt="Flecha naranja apuntando hacia abajo"
+                            class="arrow-image arrow-down">
+                    </div>
+
+                    <div class="p5"></div>
+
+                    <div class="block block-subproblem">
+                        <div class="info_container" id="subproblem">
+                            <div class="info red_border"></div>
+                        </div>
+                        <h2>Subproblema</h2>
+                    </div>
+
+                    <div class="arrow arrow-inductive-steps">
+                        <p class="step step-inductive">Llamada recursiva</p>
+                        <img src="{% static 'images/blue-pointer.png' %}" alt="Flecha negra apuntando hacia la derecha"
+                            class="arrow-image black_arrow">
+                    </div>
+
+                    <div class="block block-simpler-solution">
+                        <div class="info_container" id="simpler">
+                            <div class="info blue_border"></div>
+                        </div>
+                        <h2>Solución simple</h2>
+                    </div>
+
+                    <div class="arrow arrow-derivation">
+                        <p class="step step-derivation">Derivación caso recursivo</p>
+                        <img src="{% static 'images/green-pointer.png' %}" alt="Flecha naranja apuntando hacia arriba"
+                            class="arrow-image arrow-up">
+                    </div>
+
+                    <div class="block block-solution">
+                        <div class="info_container" id="result">
+                            <div class="info green_border"></div>
+                        </div>
+                        <h2>Solución</h2>
+                    </div>
+
+                </section>
+            </section>
+        </div>
+        <div class="right-learning">
+            <section class="code">
+                <div class="code_nav_container">
+                    <h2>Código</h2>
+                    <button id="copy" type="button"><span id="copy_text">Copiar</span><img
+                            src="{% static 'images/copy_icon.png' %}" alt="Copiar" title="Copiar"></button>
+                </div>
+                <div class="code-container">
+                    <p id="code_content"></p>
+                </div>
+            </section>
+            <section class="tutor">
+                <div class="bocadillo">
+                    <div class="bocadillo-content">
+                        <p id="paragraph_content">Comencemos el ejercicio.</p>
+                        <div class="next-content" id="content">
+                            <div class="next next1" id="primero">Empezar</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="triangulo_container">
+                    <div class="triangulo"></div>
+                </div>
+                <div class="teacher-container">
+                    <img src="{% static 'images/buho.png' %}"
+                        alt="El profesor buho será el encargado de impartir la lección" id="teacher">
+                </div>
+            </section>
+        </div>
+    </div>
+    <div>
+        <input type="hidden" name="paragraph" id="paragraph" value="{{ paragraph }}">
+        <input type="hidden" name="paragraph1" id="paragraph1" value="{{ paragraph1 }}">
+        <input type="hidden" name="paragraph2" id="paragraph2" value="{{ paragraph2 }}">
+        <input type="hidden" name="options" id="options" value="{{ options }}">
+        <input type="hidden" name="options1" id="options1" value="{{ options1 }}">
+        <input type="hidden" name="options2" id="options2" value="{{ options2 }}">
+        <input type="hidden" name="code" id="code" value="{{ code }}">
+        <input type="hidden" name="code1" id="code1" value="{{ code1 }}">
+        <input type="hidden" name="code2" id="code2" value="{{ code2 }}">
+        <input type="hidden" name="optionsChange" id="optionsChange" value="{{ optionsChange }}">
+        <input type="hidden" name="optionsChange1" id="optionsChange1" value="{{ optionsChange1 }}">
+        <input type="hidden" name="optionsChange2" id="optionsChange2" value="{{ optionsChange2 }}">
+        <input type="hidden" name="place" id="place" value="{{ place }}">
+        <input type="hidden" name="code_recursive" id="code_recursive" value="{{ code_recursive }}">
+    </div>
+    <div class="badge_container">
+        <button class="end" type="submit" disabled>
+            <img src="{% static 'images/badge.png' %}" alt="Medalla obtenida al realizar el ejercicio" id="badge">
+            <p>{% if done %}Ya habías conseguido esta medalla<br>Pulsa para salir{% else %}Pulsa para recoger tu
+                medalla{% endif %}</p>
+            <div class="halo"></div>
+        </button>
+    </div>
+</form>
+<script type="text/javascript" src="{% static 'scripts/exercises.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/copy.js' %}"></script>
+{% endblock content %}

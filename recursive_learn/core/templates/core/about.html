@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contacto{% endblock title %}
+
+{% load static %}
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/extras.css' %}">
+</link>
+{% endblock extrastyles %}
+
+
+{% block content %}
+
+<div class="extras_wrapper">
+    <div class="extras_container">
+        <h1>Sobre</h1>
+        <p>Está es una página cuya finalidad es la enseñanza de la recursividad a traves de ejemplos interactivos. A
+            través de múltiples ejercicios, nuestro amigo el buho, explicará los pasos a seguir mientras desarrollamos
+            un ejercicio recursivo. A la vez ira apareciendo el código. Espero que disfrutes mucho de la aplicación y
+            deseo que te sirva para introducirte al mundo de la recursividad.</p>
+    </div>
+</div>
+
+{% endblock content %}

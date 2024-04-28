@@ -1,0 +1,64 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Inicio{% endblock title %}
+
+{% load static %}
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/searcher.css' %}">
+</link>
+<script src="https://kit.fontawesome.com/9533a84ba9.js" crossorigin="anonymous"></script>
+{% endblock extrastyles %}
+
+{% block content %}
+<h1>Ejercicios</h1>
+<section class="searcher_container">
+	<form action="{% url 'exercises:searcher' %}" method="get">
+		<label for="searcher">Nombre:</label>
+		<input type="text" name="query_name" value="{{ query_name }}" placeholder="Introduzca el nombre del ejercicio"
+			id="searcher">
+		<div class="another_line">
+			<label for="query_done">Realizado:</label>
+			<input type="radio" name="query_done" id="done" value="Sí" {% if query_done == "Sí" %}checked{% endif %}>
+			<label for="done">Sí</label>
+			<input type="radio" name="query_done" id="notdone" value="No" {% if query_done == "No" %}checked{% endif %}>
+			<label for="notdone">No</label>
+		</div>
+		<button type="submit" class="search">Buscar</button>
+		<a href="{% url 'exercises:searcher' %}" class="clear ref">Limpiar filtros</a>
+	</form>
+</section>
+
+<section class="exercises">
+	<label for="percentage_bar">Ejercicios resueltos:</label>
+	<div id="percentage_bar">
+		<div id="progress">{{ percentage }}%</div>
+	</div>
+	<p class="message_percentage"></p>
+	<table class="exercises_t">
+		<thead>
+			<tr class="titles">
+				<th>Nombre</th>
+				<th class="th_middle">Realizado</th>
+				<th>Dificultad</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for exercise in exercises %}
+			{% if query_done == exercise_set|get_item:exercise.name or query_done == '' %}
+			<tr>
+				<td><a href="{% url 'exercises:exercise' exercise.id %}" class="ref">{{ exercise.name }}</a></td>
+				<td
+					class="th_middle {% if exercise_set|get_item:exercise.name == 'Sí' %}td_green{% else %}td_red{% endif %}">
+					{{ exercise_set|get_item:exercise.name }}</td>
+				<td>{% for star in stars %}{% if star <= exercise.difficulty %}<i class="fa-solid fa-star"
+						style="color: #fbc80e;"></i>{% else %}<i class="fa-regular fa-star"
+							style="color: #808080;"></i>{% endif %}{% endfor %}</td>
+			</tr>
+			{% endif %}
+			{% endfor %}
+		</tbody>
+	</table>
+</section>
+<script type="text/javascript" src="{% static 'scripts/searcher.js' %}"></script>
+{% endblock content %}

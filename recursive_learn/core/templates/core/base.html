@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock title %} | LeapOfFaith</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'styles/base.css' %}">
+    </link>
+    {% block extrastyles %}{% endblock extrastyles %}
+
+</head>
+
+<body>
+    <nav>
+        <a href="/" class="home-container"><img src="{% static 'images/home-icon2.png' %}" alt="Icono casa negra"
+                id="home"></a>
+        {% if request.user.is_authenticated %}
+        <a href="{% url 'exercises:searcher' %}" class="exercises-link">Ejercicios</a>
+        {% endif %}
+        <div class="container-right">
+            {% if request.user.is_authenticated %}
+            
+            <div class="profile">
+                <img src="{% static 'images/user-icon.png' %}" alt="Icono usuario" id="user">
+                <div class="menu">
+                    <h3 class="name">{{ user.username }}</h3>
+                    <hr>
+                    <ul>
+                        <li><a href="{% url 'core:details_user' %}" class="menu_element">Perfil</a></li>
+                        <li><a href="{% url 'core:logout' %}" class="logout">Cerrar sesión</a></li>
+                    </ul>
+                </div>
+            </div>
+            {% else %}
+            <a href="{% url 'core:signup' %}" class="signup">Registrarse</a>
+            <a href="{% url 'core:login' %}" class="login">Iniciar sesión</a>
+            {% endif %}
+        </div>
+    </nav>
+    <main>
+        {% block content %}{% endblock content %}
+    </main>
+
+    <footer>
+        <img src="{% static 'images/URJ_logo_BN_NEG_corona_roja.jpg' %}"
+            alt="Logo de la Universidad Rey Juan Carlos. Letra u blanca a la izquierda con una corona roja hecha de una linea horizontal inferior roja, tres puntos rojos por encima en fila y uno en medio más pequeño arriba. A la derecha escrito en blanco: Universidad Rey Juan Carlos."
+            id="urjc_logo">
+        <div class="footer_info_container">
+            <h3>LeapOfFaith</h3>
+            <a href="{% url 'core:contact' %}">Contacto</a>
+            <a href="{% url 'core:about' %}">Sobre</a>
+        </div>
+    </footer>
+    <script type="text/javascript" src="{% static 'scripts/base.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contacto{% endblock title %}
+
+{% load static %}
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/extras.css' %}">
+</link>
+{% endblock extrastyles %}
+
+
+{% block content %}
+<div class="extras_wrapper">
+    <div class="extras_container">
+        <h1>Contacto</h1>
+        <p>Correo: <a class="email" href="mailto:soporte.leap.of.faith@gmail.com">soporte.leap.of.faith@gmail.com</a>
+        </p>
+    </div>
+</div>
+{% endblock content %}

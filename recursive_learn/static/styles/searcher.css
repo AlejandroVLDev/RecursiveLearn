@@ -1,0 +1,100 @@
+h1 {
+    margin-left: 1rem;
+    margin-bottom: 0;
+}
+
+.searcher_container {
+    margin: 1rem;
+}
+
+.searcher_container form {
+    box-sizing: border-box;
+    border-radius: 0.75rem;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color: rgb(171, 171, 171);
+}
+
+#searcher {
+    font-size: large;
+    overflow: scroll;
+}
+
+.another_line {
+    display: block;
+    margin-top: 0.5rem;
+}
+
+.search {
+    border-radius: 0.75rem;
+    border: none;
+    font-size: large;
+    padding: 1rem;
+    margin: 1rem 0 ;
+    cursor: pointer;
+}
+
+.search:hover {
+    background-color: gray;
+}
+
+.clear {
+    display: block;
+    width: fit-content;
+}
+
+.ref {
+    text-decoration: none;
+    color: black;
+}
+
+.ref:hover {
+    color: #ac95ff;
+}
+
+.exercises {
+    margin: 0 1rem;
+}
+
+#percentage_bar {
+    margin-top: 0.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: rgb(215, 215, 215);
+    border: 2pt black solid;
+}
+
+#progress {
+    box-sizing: border-box;
+    padding: 0.5rem;
+    background-color: greenyellow;
+    text-align: center;
+    border-radius: 0.5rem;
+}
+
+.exercises_t {
+    border-collapse: collapse;
+}
+
+thead {
+    text-align: left;
+    border-bottom: 1pt solid black;
+}
+
+.th_middle {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+tbody tr:nth-child(odd){
+    background-color: rgb(235, 235, 235);
+}
+
+.td_green {
+    color: green;
+}
+
+.td_red {
+    color: red;
+}

@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block title%}El código recibido es erroneo{% endblock%}
+
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/forms.css' %}">
+{% endblock extrastyles %}
+
+{% block content %}
+<div class="form_container">
+    <h2 class="form_title">Restaurar contraseña</h2>
+    <p>El código introducido no es correcto</p>
+</div>
+{% endblock %}

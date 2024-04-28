@@ -1,0 +1,238 @@
+.title {
+    width: 100%;
+    align-content: center;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+section.explanation {
+    background-color: aquamarine;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: x-large;
+}
+
+.left-learning {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.left-learning section {
+    margin-bottom: 0.5rem;
+    margin-right: 0.25rem;
+}
+
+.right-learning section {
+    margin-bottom: 0.5rem;
+    margin-left: 0.25rem;
+}
+
+.right-learning {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.learning {
+    display: flex;
+    margin: 1rem;
+}
+
+.step_separator {
+    border: 1px solid black;
+}
+
+.step_graph_ex {
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background: #fffac3;
+}
+
+.recursive-steps.exercise-steps {
+    background: #fffac3;
+    /*ff7f7f*/
+}
+
+section.code {
+    padding: 2rem;
+    border-radius: 0.75rem;
+    background: #83b8ff;
+}
+
+section.tutor {
+    place-self: stretch;
+    padding: 2rem;
+    background: #9b9b9b;
+    border-radius: 0.75rem;
+    min-height: max-content;
+}
+
+.description {
+    text-align: justify;
+}
+
+.outline {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.focus-wraper {
+    position: relative;
+}
+
+.definition p {
+    margin: 0;
+}
+
+#first {
+    max-width: 80%;
+}
+
+#second {
+    max-width: 80%;
+}
+
+.ring {
+    position: absolute;
+    background-color: rgba(137, 137, 255, 0.350);
+    border-radius: 50%;
+    border-color: black;
+}
+
+.stick {
+    position: absolute;
+    background-color: black;
+    left: calc(50% - 0.5rem);
+    border-radius: 0.75rem;
+}
+
+.focus {
+    animation: focused 4s;
+}
+
+.focus-stick {
+    animation: focusedStick 4s;
+}
+
+.focus-border {
+    border: dotted red;
+}
+
+@keyframes focused {
+    0%, 66% {
+        top: calc(50% - 8.5rem);
+        left: calc(50% - 8.5rem);
+        height: 15rem;
+        width: 15rem;
+        border-width: 1rem;
+        border-style: solid;
+    }
+
+    33%, 100% {
+        top: calc(50% - 5rem);
+        left: calc(50% - 5rem);
+        height: 8rem;
+        width: 8rem;
+        border-width: 1rem;
+        border-style: solid;
+    }
+}
+
+@keyframes focusedStick {
+    0%, 66% {
+        top: calc(50% + 8rem);
+        height: 12rem;
+        width: 1rem;
+    }
+
+    33%, 100% {
+        top: calc(50% + 4rem);
+        height: 7.5rem;
+        width: 1rem;
+    }
+}
+
+.badge_container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.badge_container.end_active {
+    z-index: 120;
+    visibility: visible;
+}
+
+#badge {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+}
+
+.halo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0px;
+    height: 0px;
+    z-index: 1;
+    border-radius: 50%;
+    border: 80rem solid transparent;
+    background-size: 100% 100%, 50% 50%, 50% 50%, 50% 50%, 50% 50%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(white, white), 
+                        linear-gradient(30deg, red 36%, rgba(211, 211, 211, 0) 30%),
+                        linear-gradient(120deg, yellow 36%, rgba(211, 211, 211, 0) 30%),
+                        linear-gradient(300deg, blue 36%, rgba(211, 211, 211, 0) 30%),
+                        linear-gradient(210deg, green 36%, rgba(211, 211, 211, 0) 30%);
+    background-position: center center, left top, right top, left bottom, right bottom;
+    background-origin: content-box, border-box, border-box, border-box, border-box;
+    background-clip: content-box, border-box, border-box, border-box, border-box;
+    animation: rotate_circle 60s linear 0s infinite;
+}
+
+.end {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.388);
+    cursor: pointer;
+}
+
+.end p {
+    position: relative;
+    z-index: 3;
+    background-color: white;
+    border-radius: 0.75rem;
+    border: 2pt black solid;
+    padding: 1rem;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-size: xx-large;
+}
+
+@keyframes rotate_circle {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.consolas {
+    font-family: 'Consolas';
+}
+
+.field {
+    align-items: middle;
+    padding: 0.25rem 0;
+}

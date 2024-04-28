@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css"/>
+        <script defer src="https://pyscript.net/latest/pyscript.js"></script>-->
+    <title>Prueba pyscript</title>
+    {% load static %}
+</head>
+
+<body>
+    <input type="hidden" name="t_x" id="t_x" value="{{ data }}">
+    <div id="paragraph"></div>
+    <script type="text/javascript" src="{% static 'scripts/prueba.js' %}"></script>
+    <py-script src="{% static 'pruebas/main.py' %}"></py-script>
+</body>
+
+</html>

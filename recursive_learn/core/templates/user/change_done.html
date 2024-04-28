@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block title%}Cambio de {{ title }}{% endblock%}
+
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/forms.css' %}">
+{% endblock extrastyles %}
+
+{% block content %}
+<div class="form_container">
+    <p>El cambio de {{ title }} se ha realizado con exito.</p>
+    <a href="{% url 'core:login' %}" class="button_back">Iniciar sesión</a>
+</div>
+{% endblock %}

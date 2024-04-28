@@ -1,0 +1,17 @@
+.extras_wrapper {
+    box-sizing: border-box;   
+}
+
+.extras_container {
+    background-color: black;
+    margin: 1rem;
+    padding: 1rem;
+    color: white;
+    border-radius: 0.5rem;
+    text-align: justify;
+}
+
+.email {
+    text-decoration: none;
+    color: orange;
+}

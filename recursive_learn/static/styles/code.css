@@ -1,0 +1,88 @@
+@import url('https://fonts.cdnfonts.com/css/open-dyslexic');
+
+.code-container {
+    overflow: auto;
+    background-color: #fff;
+    border-radius: 0.75rem;
+}
+
+#code_content {
+    display: block;
+    font-family: 'Consolas';
+    height: 90%;
+    max-height: 15.625rem;
+    padding: 1rem;
+    margin: 0;
+    font-size: larger;
+}
+
+#code_content span {
+    font-family: 'Consolas';
+}
+
+.code-container::-webkit-scrollbar {
+    width: 1.25rem;
+}
+
+.code-container::-webkit-scrollbar-track-piece {
+    opacity: 0;
+}
+
+.code-container::-webkit-scrollbar-thumb {
+    background: #a8a8a8;
+    border-radius: 0.75rem;
+}
+
+.code-container::-webkit-scrollbar-thumb:hover {
+    background: #8a8a8a;
+}
+
+.code-container::-webkit-scrollbar-corner {
+    height: 0%;
+}
+
+.form {
+    margin-top: 1em;
+}
+
+.code_nav_container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    align-items: center;
+}
+
+.code_nav_container h2 {
+    margin: 0;
+}
+
+#copy img{
+    width: 2.5rem;
+    height: auto;
+}
+
+#copy_text {
+    font-size: x-large;
+}
+
+#copy {
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #00000000;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.appear {
+    animation: appear 6s;
+}
+
+@keyframes appear {
+    0%, 100% {
+        background-color: #00000000;
+    }
+    20%, 80% {
+        background-color: aquamarine;
+    } 
+}

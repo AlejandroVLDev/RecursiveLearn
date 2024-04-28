@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block title%}{{ title }}{% endblock%}
+
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/error.css' %}">
+{% endblock extrastyles %}
+
+{% block content %}
+<div class="error_container">
+    <h1>{{ title }}: {{ title_extra }}</h1>
+    <P>{{ error }}</P>
+</div>
+{% endblock %}

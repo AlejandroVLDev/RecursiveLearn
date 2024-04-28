@@ -1,0 +1,114 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Inicio{% endblock title %}
+
+{% load static %}
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/learning_index.css' %}">
+</link>
+<link rel="stylesheet" type="text/css" href="{% static 'styles/index.css' %}">
+</link>
+{% endblock extrastyles %}
+
+
+{% block content %}
+<h1>Una breve introducción</h1>
+<p class="intro-explain">Pincha en cualquiera de las cajas para obtener más información de cada una de las etapas de un
+    ejercicio recursivo.</p>
+<section class="step_graph">
+    <div class="titles_container">
+        <h2>Entradas</h2>
+        <h2 class="exits">Salidas</h2>
+    </div>
+    <hr class="step_separator">
+</section>
+<section class="recursive-steps exercise-steps">
+
+    <div class="obscure"></div>
+
+    <div class="block block-input block_interactible">
+        <div class="info_container">
+            <div class="info">
+                <p>[3, 2, -6, 8, 11]</p>
+            </div>
+        </div>
+        <h2>Entrada</h2>
+    </div>
+    <p class="explain explain-input">El primer paso siempre es elegir un <strong>tamaño del problema</strong>, el cual
+        es el elemento que debemos reducir para generar <strong>subproblemas</strong>. También tendremos que elegir
+        el/los <strong>casos base</strong>. El <strong>caso base</strong> es el elemento de la condición de parada,
+        momento en el cual la resolución del problema es trivial.<br><br><span class="click_exit">Pincha fuera para
+            cerrar</span></p>
+
+    <div class="arrow arrow-result">
+        <img src="{% static 'images/blue-pointer.png' %}" alt="Flecha negra apuntando hacia la derecha"
+            class="arrow-image black_arrow">
+    </div>
+
+    <div class="arrow arrow-decomposition">
+        <p class="step step-decomposition">Descomposición</p>
+        <img src="{% static 'images/green-pointer.png' %}" alt="Flecha naranja apuntando hacia abajo"
+            class="arrow-image arrow-down">
+    </div>
+
+    <div class="p5"></div>
+
+    <div class="block block-subproblem block_interactible">
+        <div class="info_container" id="subproblem">
+            <div class="info red_border">
+                <p>[2, -6, 8, 11]</p>
+            </div>
+        </div>
+        <h2>Subproblema</h2>
+    </div>
+    <p class="explain explain-subproblem">El <strong>subproblema</strong> se obtiene de la
+        <strong>descomposición</strong> de la entrada. Con el <strong>tamaño del problema</strong> debemos decidir como
+        se va a reducir, por ejemplo, en una lista podriamos quitar el primer elemento. Al descomponer nos quedará uno o
+        varios elementos que utilizaremos más adelante para resolver el problema.<br>A veces al elegir una
+        <strong>descomposición</strong> los <strong>casos base</strong> podrían no ser suficientes. Por ejemplo, si
+        quitamos elementos de la lista de 2 en 2 no valdría con solo llegar a una lista vacia, también podría quedar un
+        único elemento. Estas <strong>descomposiciones</strong> generan errores de ejecución o recursión infinita si no
+        se contemplan todos los <strong>casos base</strong>.<br><br><span class="click_exit">Pincha fuera para
+            cerrar</span></p>
+
+    <div class="arrow arrow-inductive-steps">
+        <p class="step step-inductive">Llamada recursiva</p>
+        <img src="{% static 'images/blue-pointer.png' %}" alt="Flecha negra apuntando hacia la derecha"
+            class="arrow-image black_arrow">
+    </div>
+
+    <div class="block block-simpler-solution block_interactible">
+        <div class="info_container" id="simpler">
+            <div class="info blue_border">
+                <p>2 + (-6) + 8 + 11 = 15</p>
+            </div>
+        </div>
+        <h2>Solución simple</h2>
+    </div>
+    <p class="explain explain-simpler-solution">Una vez hacemos la llamada recursiva vamos a asumir que el
+        <strong>subproblema</strong> se resuelve, no tenemos que plantearnos que pasa en las sucesivas llamadas
+        recursivas. Tras dar este <strong>salto de fe</strong> solo nos faltará un paso.<br><br><span
+            class="click_exit">Pincha fuera para cerrar</span></p>
+
+    <div class="arrow arrow-derivation">
+        <p class="step step-derivation">Derivación caso recursivo</p>
+        <img src="{% static 'images/green-pointer.png' %}" alt="Flecha naranja apuntando hacia arriba"
+            class="arrow-image arrow-up">
+    </div>
+
+    <div class="block block-solution block_interactible">
+        <div class="info_container" id="result">
+            <div class="info green_border">
+                <p>3 + 2 + (-6) + 8 + 11 = 18</p>
+            </div>
+        </div>
+        <h2>Solución</h2>
+    </div>
+    <p class="explain explain-solution">La solución la obtendremos de operar el resultado del
+        <strong>subproblema</strong> con el valor de la <strong>descomposición</strong>. Tenemos que pensar que
+        operación debemos realizar para obtener la solución final utilizando ambos valores.<br><br><span
+            class="click_exit">Pincha fuera para cerrar</span></p>
+</section>
+<script type="text/javascript" src="{% static 'scripts/index.js' %}"></script>
+{% endblock content %}

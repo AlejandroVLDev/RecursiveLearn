@@ -1,0 +1,96 @@
+.form_container {
+    background-color: rgb(255, 255, 255);
+    margin: 1rem auto;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    width: 50%;
+}
+
+.field_container {
+    padding-bottom: 0.5rem;
+}
+
+main {
+    background-color: rgba(0, 225, 255, 0.44);
+    font-size: x-large;
+    padding: 1rem;
+}
+
+.greeting {
+    padding-bottom: 1rem;
+}
+
+.teacher-container {
+    display: flex;
+    justify-content: center;
+}
+
+#teacher {
+    max-height: 18rem;
+    width: auto;
+    margin: 0 auto;
+}
+
+.bocadillo {
+    background: #ffffff;
+    width: fit-content;
+    border-radius: 0.75rem;
+    padding: 0.5rem 1rem;
+    margin: 0 auto;
+}
+
+.triangulo {
+    width: 0;
+    height: 0;
+    border-left: 1rem solid transparent;
+    border-right: 1rem solid transparent;
+    border-top:  1.5rem solid #ffffff;
+    margin-bottom: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button_form {
+    border: none;
+    border-radius: 0.75rem;
+    background-color: rgb(198, 198, 198);
+    padding: 1rem;
+    font-size: large;
+    margin-top: 0.5rem;
+    text-decoration: none;
+    color: black;
+}
+
+.button_form:hover {
+    background-color: rgb(171, 171, 171);
+}
+
+.forgot {
+    display: block;
+    font-size: large;
+}
+
+.errorlist {
+    color: red;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 1rem;
+    text-align: left;
+}
+
+.controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.button_back {
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.75rem;
+    background-color: grey;
+    margin-bottom: 1rem;
+}

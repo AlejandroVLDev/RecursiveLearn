@@ -1,0 +1,184 @@
+@import url('https://fonts.cdnfonts.com/css/open-dyslexic');
+
+* {
+    font-family: 'Open-Dyslexic', "Gill Sans Extrabold", Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: large;
+}
+
+nav {
+    display: flex;
+    padding: 0.25rem 1rem;
+    min-height: 1px;
+    justify-content: space-between;
+    border-bottom: 2pt solid black;
+}
+
+main {
+    flex: 1;
+    padding-bottom: 1rem;
+}
+
+.container-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-right a {
+    margin-left: 1rem;
+}
+
+.exercises-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    align-self: center;
+}
+
+.exercises-link:hover {
+    color: rgb(129, 129, 129);
+}
+
+.signup {
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.75rem;
+    background-color: grey;
+}
+
+.login {
+    padding: 1rem;
+    text-decoration: none;
+    color: white;
+    border-radius: 0.75rem;
+    background-color: grey;
+}
+
+#home {
+    width: 3rem;
+    height: 3rem;
+    opacity: 100%;
+    transition: opacity 0.5s;
+}
+
+#home:hover {
+    opacity: 60%;
+}
+
+#user {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
+    opacity: 100%;
+    transition: opacity 0.5s;
+    cursor: pointer;
+}
+
+#user:hover {
+    opacity: 60%;
+}
+
+.profile {
+    position: relative;
+    margin-left: 0.5rem;
+}
+
+.menu {
+    position: absolute;
+    top: 0rem;
+    right: -0.5rem;
+    background-color: white;
+    padding: 1rem;
+    border: solid black;
+    width:max-content;
+    border-radius: 0.75rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.menu.menu_active {
+    top: 3.5rem;
+    visibility: visible;
+    opacity: 1;
+}
+
+.name {
+    margin-top: 0;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-top: 0.5rem;
+    list-style: none;
+}
+
+.menu ul li a {
+    margin: 0;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.menu_element {
+    color: black;
+}
+
+.menu_element:hover {
+    color: rgb(129, 129, 129);
+}
+
+.logout {
+    color: red;
+}
+
+.logout:hover {
+    color: #fc9292;
+}
+
+.footer_info_container {
+    margin-right: 1rem;
+}
+
+footer {
+    min-height: 1px;
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.footer_info_container a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.footer_info_container a:hover {
+    color: orange;
+}
+
+#urjc_logo {
+    display: block;
+    object-fit: contain;
+    min-width: 150px;
+    max-width: 20%;
+    height: auto;
+    width: auto;
+    margin: 10px;
+}

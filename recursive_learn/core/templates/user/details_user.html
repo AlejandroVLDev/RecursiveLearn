@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block title%}Perfil{% endblock%}
+
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/forms.css' %}">
+{% endblock extrastyles %}
+
+{% block content %}
+<div class="form_container">
+    <div class="controls">
+        <h2 class="form_title">Perfil</h2>
+        <div class="controls">
+            <a href="{% url 'core:update_mail' %}" class="button_form">Cambiar correo</a>
+            <a href="{% url 'core:password_change' %}" class="button_form">Cambiar contraseña</a>
+        </div>
+    </div>
+    <section class="container_details">
+        <p>Nombre usuario: {{ user.username }}</p>
+        <p>Correo: {{ mail }}</p>
+    </section>
+</div>
+{% endblock %}

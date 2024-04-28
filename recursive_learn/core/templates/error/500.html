@@ -1,0 +1,14 @@
+{% extends 'core/base.html' %}
+
+{% block title%}500{% endblock%}
+
+{% block extrastyles %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles/error.css' %}">
+{% endblock extrastyles %}
+
+{% block content %}
+<div class="error_container">
+    <h1>ERROR 500: SERVER ERROR</h1>
+</div>
+{% endblock %}
